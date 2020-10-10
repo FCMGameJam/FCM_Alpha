@@ -18,10 +18,12 @@ void AFCM_AlphaPlayerController::PlayerTick(float DeltaTime)
 	Super::PlayerTick(DeltaTime);
 
 	// keep updating the destination every tick while desired
+	/*
 	if (bMoveToMouseCursor)
 	{
 		MoveToMouseCursor();
 	}
+	*/
 }
 
 void AFCM_AlphaPlayerController::SetupInputComponent()
@@ -43,7 +45,7 @@ void AFCM_AlphaPlayerController::OnResetVR()
 {
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
 }
-
+/*
 void AFCM_AlphaPlayerController::MoveToMouseCursor()
 {
 	if (UHeadMountedDisplayFunctionLibrary::IsHeadMountedDisplayEnabled())
@@ -69,6 +71,7 @@ void AFCM_AlphaPlayerController::MoveToMouseCursor()
 		}
 	}
 }
+*/
 
 void AFCM_AlphaPlayerController::MoveToTouchLocation(const ETouchIndex::Type FingerIndex, const FVector Location)
 {
@@ -102,11 +105,11 @@ void AFCM_AlphaPlayerController::SetNewMoveDestination(const FVector DestLocatio
 void AFCM_AlphaPlayerController::OnSetDestinationPressed()
 {
 	// set flag to keep updating destination until released
-	bMoveToMouseCursor = true;
+	//bMoveToMouseCursor = true;
 }
 
 void AFCM_AlphaPlayerController::OnSetDestinationReleased()
 {
 	// clear flag to indicate we should stop updating the destination
-	bMoveToMouseCursor = false;
+	//bMoveToMouseCursor = false;
 }
